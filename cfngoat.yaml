@@ -603,6 +603,8 @@ Resources:
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
 
   ### TODO - Custom Upload of insecure document
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: True
 
   FinancialsBucket:
     # not encrypted, no access logs, no versioning
@@ -616,7 +618,6 @@ Resources:
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-financials"
       PublicAccessBlockConfiguration:
         IgnorePublicAcls: True
-        BlockPublicPolicy: True
 
   OperationsBucket:
     # not encrypted, no access logs
