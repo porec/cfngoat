@@ -616,6 +616,7 @@ Resources:
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-financials"
       PublicAccessBlockConfiguration:
         IgnorePublicAcls: True
+        BlockPublicPolicy: True
 
   OperationsBucket:
     # not encrypted, no access logs
